@@ -1,0 +1,11 @@
+package example:types;
+
+interface types {
+    variant ast {
+        empty,
+    }
+
+    variant module {
+        empty,
+    }
+}

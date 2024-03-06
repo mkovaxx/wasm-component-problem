@@ -1,0 +1,23 @@
+[package]
+name = "parser"
+version = "0.1.0"
+edition.workspace = true
+authors.workspace = true
+categories.workspace = true
+keywords.workspace = true
+repository.workspace = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bitflags = "2.4.2"
+wit-bindgen-rt = "0.20.0"
+
+[lib]
+crate-type = ["cdylib"]
+
+[package.metadata.component]
+package = "example:parser"
+
+[package.metadata.component.target.dependencies]
+"example:types" = { path = "../types/wit" }

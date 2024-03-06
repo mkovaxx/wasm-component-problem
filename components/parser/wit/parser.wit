@@ -1,0 +1,12 @@
+package example:parser;
+
+interface parsing {
+    use example:types/types.{ast};
+
+    /// Parse the source of a module into an AST
+    parse: func(source: string) -> ast;
+}
+
+world parser {
+    export parsing;
+}

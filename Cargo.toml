@@ -1,0 +1,12 @@
+[workspace]
+resolver = "2"
+members = ["components/cli", "components/parser"]
+
+[workspace.package]
+edition = "2021"
+authors = ["Mate Kovacs"]
+categories = ["wasm"]
+keywords = ["webassembly", "wasm"]
+repository = "https://github.com/mkovaxx/wasm-component-problem"
+
+[workspace.dependencies]

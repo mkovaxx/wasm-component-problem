@@ -1,4 +1,4 @@
-package example:types;
+package example:types@0.1.0;
 
 interface types {
     variant ast {

@@ -1,0 +1,5 @@
+package example:cli@0.1.0;
+
+world cli {
+    import example:parser/parsing@0.1.0;
+}

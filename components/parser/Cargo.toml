@@ -19,5 +19,8 @@ crate-type = ["cdylib"]
 [package.metadata.component]
 package = "example:parser"
 
+[package.metadata.component.target]
+path = "wit"
+
 [package.metadata.component.target.dependencies]
 "example:types" = { path = "../types/wit" }

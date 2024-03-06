@@ -1,7 +1,7 @@
-package example:parser;
+package example:parser@0.1.0;
 
 interface parsing {
-    use example:types/types.{ast};
+    use example:types/types@0.1.0.{ast};
 
     /// Parse the source of a module into an AST
     parse: func(source: string) -> ast;

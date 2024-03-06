@@ -19,5 +19,9 @@ package = "example:cli"
 [package.metadata.component.dependencies]
 "example:parser" = { path = "../../target/wasm32-wasi/debug/parser.wasm" }
 
+[package.metadata.component.target]
+path = "wit"
+
 [package.metadata.component.target.dependencies]
+"example:parser" = { path = "../parser/wit" }
 "example:types" = { path = "../types/wit" }

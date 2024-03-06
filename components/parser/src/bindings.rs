@@ -56,18 +56,18 @@ pub mod exports {
                 }
                 #[doc(hidden)]
 
-                macro_rules! __export_example_parser_parsing_cabi{
+                macro_rules! __export_example_parser_parsing_0_1_0_cabi{
         ($ty:ident with_types_in $($path_to_types:tt)*) => (const _: () = {
 
 
-          #[export_name = "example:parser/parsing#parse"]
+          #[export_name = "example:parser/parsing@0.1.0#parse"]
           unsafe extern "C" fn export_parse(arg0: *mut u8,arg1: usize,) -> i32 {
             $($path_to_types)*::_export_parse_cabi::<$ty>(arg0, arg1)
           }
         };);
       }
                 #[doc(hidden)]
-                pub(crate) use __export_example_parser_parsing_cabi;
+                pub(crate) use __export_example_parser_parsing_0_1_0_cabi;
             }
         }
     }
@@ -107,7 +107,7 @@ mod _rt {
 macro_rules! __export_parser_impl {
   ($ty:ident) => (self::export!($ty with_types_in self););
   ($ty:ident with_types_in $($path_to_types_root:tt)*) => (
-  $($path_to_types_root)*::exports::example::parser::parsing::__export_example_parser_parsing_cabi!($ty with_types_in $($path_to_types_root)*::exports::example::parser::parsing);
+  $($path_to_types_root)*::exports::example::parser::parsing::__export_example_parser_parsing_0_1_0_cabi!($ty with_types_in $($path_to_types_root)*::exports::example::parser::parsing);
   )
 }
 #[doc(inline)]
@@ -116,14 +116,15 @@ pub(crate) use __export_parser_impl as export;
 #[cfg(target_arch = "wasm32")]
 #[link_section = "component-type:wit-bindgen:0.20.0:parser:encoded world"]
 #[doc(hidden)]
-pub static __WIT_BINDGEN_COMPONENT_TYPE: [u8; 302] = *b"\
-\0asm\x0d\0\x01\0\0\x19\x16wit-component-encoding\x04\0\x07\xb1\x01\x01A\x02\x01\
+pub static __WIT_BINDGEN_COMPONENT_TYPE: [u8; 320] = *b"\
+\0asm\x0d\0\x01\0\0\x19\x16wit-component-encoding\x04\0\x07\xc3\x01\x01A\x02\x01\
 A\x05\x01B\x04\x01q\x01\x05empty\0\0\x04\0\x03ast\x03\0\0\x01q\x01\x05empty\0\0\x04\
-\0\x06module\x03\0\x02\x03\x01\x13example:types/types\x05\0\x02\x03\0\0\x03ast\x01\
-B\x04\x02\x03\x02\x01\x01\x04\0\x03ast\x03\0\0\x01@\x01\x06sources\0\x01\x04\0\x05\
-parse\x01\x02\x04\x01\x16example:parser/parsing\x05\x02\x04\x01\x15example:parse\
-r/parser\x04\0\x0b\x0c\x01\0\x06parser\x03\0\0\0G\x09producers\x01\x0cprocessed-\
-by\x02\x0dwit-component\x070.201.0\x10wit-bindgen-rust\x060.20.0";
+\0\x06module\x03\0\x02\x03\x01\x19example:types/types@0.1.0\x05\0\x02\x03\0\0\x03\
+ast\x01B\x04\x02\x03\x02\x01\x01\x04\0\x03ast\x03\0\0\x01@\x01\x06sources\0\x01\x04\
+\0\x05parse\x01\x02\x04\x01\x1cexample:parser/parsing@0.1.0\x05\x02\x04\x01\x1be\
+xample:parser/parser@0.1.0\x04\0\x0b\x0c\x01\0\x06parser\x03\0\0\0G\x09producers\
+\x01\x0cprocessed-by\x02\x0dwit-component\x070.201.0\x10wit-bindgen-rust\x060.20\
+.0";
 
 #[inline(never)]
 #[doc(hidden)]
